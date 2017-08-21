@@ -1,0 +1,4 @@
+#!/bin/sh
+
+../../scripts/text2workspace.py ./mh150.txt -P HiggsAnalysis.CombinedLimit.ChargedHiggs:brChargedHiggs -o workspaceM150.root
+combine  -M Asymptotic --picky -v 2  --rMin 0 --rMax 1 -m 150 -n blinded_m150 --rAbsAcc 0.00001 -d workspaceM150.root

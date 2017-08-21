@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p mlfit_m90_expectSignal1
+combine -M MaxLikelihoodFit -t -1 --expectSignal 1 -m 90 --out mlfit_m90_expectSignal1 --plots --saveShapes --saveWithUncertainties --saveNormalizations --robustFit=1 --initFromBonly --setPhysicsModelParameterRange BR=0.00,0.10 workspaceM90.root
+python /afs/cern.ch/work/a/amagnani/private/COMBINE/CMSSW_7_4_7/src/HiggsAnalysis/CombinedLimit/test/diffNuisances.py --all --poi=BR -g mlfit_m90_expectSignal1/mlfit_m90_pull.root mlfit_m90_expectSignal1/mlfit.root > mlfit_m90_expectSignal1/diffNuisances.txt
+

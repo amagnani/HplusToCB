@@ -1,0 +1,101 @@
+    cp HplusAnalyzer_dataBkg.h $DIR1/interface
+ 1041  cp HplusAnalyzer.h $DIR1/interface
+ 1042  cp HplusAnalyzer_ttSignal.h $DIR1/interface
+ 1043  more PatMuonAnalyzer.h 
+ 1044  ls
+ 1045  cp SINCROAnalyzer_ttSignal.h $DIR/interface
+ 1046  cp SINCROJetsProducer.h $DIR/interface
+ 1047  cp SingleTopJetsProducer.h $DIR/interface
+ 1048  cp SingleTopMETsProducer.h $DIR/interface
+ 1049  cd ../src/
+ 1050  ls
+ 1051  cp SINCROJetsProducer.cc $DIR/src
+ 1052  cp SingleTopJetsProducer.cc $DIR/src
+ 1053  cp SingleTopMETsProducer.cc $DIR/src
+ 1054  cd ../plugins/
+ 1055  ls
+ 1056  more BuildFile.xml 
+ 1057  cp BuildFile.xml $DIR/plugins
+ 1058  ls
+ 1059  cp HplusAnalyzer.cc DIR/plugins 
+ 1060  cp HplusAnalyzer.cc $DIR/plugins 
+ 1061  cp HplusAnalyzer_dataBkg.cc $DIR/plugins
+ 1062  cp HplusAnalyzer_ttSignal.cc $DIR/plugins
+ 1063  cp MyMuonDzSelector.cc $DIR/plugins
+ 1064  cp  MyMuonDzSelector.h $DIR/plugins
+ 1065  cp MyPatJetNestedSelector.cc $DIR/plugins 
+ 1066  cp MyPatJetNestedSelector.h $DIR/plugins
+ 1067  cp MyPatJetSelector.cc $DIR/plugins
+ 1068  cp MyPatJetSelector.h $DIR/plugins
+ 1069  more PatTopSelectionAnalyzer.cc
+ 1070  ls
+ 1071  cp SINCROAnalyzer_ttSignal.cc $DIR/plugins
+ 1072  cd ..
+ 1073  ls
+ 1074  cd python/
+ 1075  ls
+ 1076  more customizedSelection_cff.py
+ 1077  ls -lrt
+ 1078  cp stringResolutions_etEtaPhi_Fall11_cff.py $DIR/python
+ 1079  cp myMuonDzSelector_cfi.py $DIR/python
+ 1080  cp topObjectSelection_gour_cff.py $DIR/python
+ 1081  cp HplusAnalyzer_cfi.py $DIR/python
+ 1082  rm *pyc
+ 1083  ls -lrt
+ 1084  cp topObjectSelection_korea_cff.py $DIR/python
+ 1085  cp myJetSelector_cfi.py $DIR/python
+ 1086  cp userDataMETsProducer_cfi.py $DIR/python
+ 1087  cp userDataJetsProducer_cfi.py $DIR/python
+ 1088  cp topLeptonSelection_cff.py $DIR/python
+ 1089  cp SINCROJetSelector_cfi.py $DIR/python
+ 1090  cp topSINCROSelection_cff.py $DIR/python
+ 1091  cp topSINCROLeptonSelection_cff.py $DIR/python
+ 1092  cp SINCROAnalyzer_cfi.py $DIR/python
+ 1093  cp SINCROJetSelection_cff.py $DIR/python
+ 1094  cp topJetSelection_data_cff.py $DIR/python
+ 1095  cp topJetSelection_cff.py $DIR/python
+ 1096  cp variables_cfg.py $DIR/python
+ 1097  cp topObjectSelection_cff.py $DIR/python
+ 1098  ls
+ 1099  cd ../test/
+ 1100  ls -lrt
+ 1101  rm *.pyc
+ 1102  ls -lrt
+ 1103  cp resubmit.sh $DIR/test
+ 1104  cp submit.sh $DIR/test
+ 1105  cp pickEvent_cfg.py $DIR/test 
+ 1106  cp  analyze_TTSINCRO_cfg.py $DIR/test
+ 1107  rm culoA.root
+ 1108  rm culoA2.root
+ 1109  rm culoA3.root 
+ 1110  analyzeTopSelection_MCsignal_cfg.py $DIR/test
+ 1111  cp analyzeTopSelection_MCsignal_cfg.py $DIR/test
+ 1112  cp analyzeTopSelection_Data_cfg.py $DIR/test
+ 1113  cp cambiaConfig.sh $DIR/test
+ 1114  cp report.sh $DIR/test
+ 1115  more report.sh 
+ 1116  cp analyzeTopSelection_MCttbar_cfg.py $DIR/test
+ 1117  ls $DIR/test
+ 1118  ls $DIR
+ 1119  ls /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/
+ 1120  ls /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/test 
+ 1121* ls -lrt 
+ 1122  ls -lrt /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/test 
+ 1123  ls -lrt /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/plugins 
+ 1124  ls -lrt /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/src
+ 1125  ls -lrt /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/src/
+ 1126  cd /afs/cern.ch/work/a/amagnani/private/Hpluscb_for_github/
+ 1127  ls
+ 1128  cd in
+ 1129  cd HplusCode_v5/
+ 1130  ls
+ 1131  cd interface/
+ 1132  export DIR1=$DIR/HplusCode_v5
+ 1133  ls $DIR1
+ 1134  cp analyzeTopSelection_MCttbar_cfg.py $DIR1/test
+ 1135  pwd
+ 1136  man history
+ 1137  history 50
+ 1138  history 100
+ 1139  history 150
+ 1140  history 150 >& linee.txt

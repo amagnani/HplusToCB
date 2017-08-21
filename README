@@ -1,0 +1,77 @@
+Environment for light H+ to cb analysis
+
+Building the environment
+
+Reference twikis
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideTQAFRecipes
+https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/SWGuideTopRefEventSel 
+https://twiki.cern.ch/twiki/bin/viewauth/CMS/B2GTopLikeBSM53X 
+https://twiki.cern.ch/twiki/bin/viewCMSPublic/SWGuideMETRecipe53X#CMSSW_5_3_23 
+
+Building environment on lxplus
+
+setenv SCRAM_ARCH slc6_amd64_gcc472
+cmsrel CMSSW_5_3_23
+cd CMSSW_5_3_23/src
+cmsenv
+git cms-addpk TopQuarkAnalysis/TopEventProducers
+scram b -j20
+git cms-addpkg AnalysisDataFormats/TopObjects
+git cms-addpkg TopQuarkAnalysis/Configuration
+git cms-addpkg TopQuarkAnalysis/Examples
+git cms-addpkg TopQuarkAnalysis/TopEventSelection
+git cms-addpkg TopQuarkAnalysis/TopHitFit
+git cms-addpkg TopQuarkAnalysis/TopJetCombination
+git cms-addpkg TopQuarkAnalysis/TopKinFitter
+git cms-addpkg TopQuarkAnalysis/TopObjectResolutions
+git cms-addpkg EgammaAnalysis/ElectronTools
+cd EgammaAnalysis/ElectronTools/data
+cat download.url | xargs wget
+cd 
+scramb -j20
+git cms-addpkg DataFormats/PatCandidates
+git cms-addpkg DataFormats/StdDictionaries
+git cms-addpkg FWCore/GuiBrowsers
+git cms-addpkg PhysicsTools/PatAlgos
+git cms-addpkg RecoJets/JetProducers
+git cms-addpkg RecoJets/JetAlgorithms
+git cms-addpkg RecoJets/JetAssociationAlgorithms
+git cms-addpkg RecoJets/JetAssociationProducers
+git cms-addpkg RecoParticleFlow/PFProducer
+git cms-addpkg RecoTauTag/Configuration
+git cms-addpkg RecoTauTag/RecoTau
+git cms-addpkg TopQuarkAnalysis/TopPairBSM
+git cms-addpkg RecoMET/METFilters
+git cms-addpkg RecoMET/METAnalyzers
+git cms-merge-topic -u TaiSakuma:53X-met-140217-01
+git cms-addpkg PhysicsTools/PatUtils
+scram b -j20
+
+open  PhysicsTools/PatUtils/python/patPFMETCorrections_cff.py and uncomment the lines about type0 corrections: lines 99,100,74,64 
+open  PhysicsTools/PatAlgos/python/producerLayer1/jetProducer_cfi.py  and comment lines 49-53, otherwise the pattificator will not work on the official MC samples 
+To use JEC, JER and JEC uncertainties download this .zip file from here https://github.com/cms-cvs-history/CondFormats-JetMETObjects, build and complile a directory named CondFormats/JetMETObjects 
+git cms-addpkg JetMETCorrections/Objects
+scram b -j20
+
+Insert Hplus code in the environment:
+
+1. Pattificator
+
+Take directories pat_* and place them under TopQuarkAnalysis/TopPairBSM 
+
+2. Analyzer 
+
+Take the HplusCode_v5 directory from this github repository and place it in PhysicsTools, compile it with scram b
+
+3. Offline analysis
+You can find it in the offline_analysis directory. It runs on the final ntuples, produces plots and datacards for combined. 
+
+4. Combine
+Follow instructions here to set up the environment on lxplus:
+https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideHiggsAnalysisCombinedLimit#Setting_up_the_environment
+
+Take limits directory and place it in CMSSW_7_4_7/src/HiggsAnalysis/CombinedLimit/data. Add there the datacards produced with the offline analysis to compute blinded limits. 
+For unblinded results, do he same with limits_unblinded directory. 
+
+
+

@@ -1,0 +1,6 @@
+root
+TFile f1("analyzePatTopSelection.root")
+f1->cd()
+f1->ls()
+recoPreStart->cd()
+HplusRecoPreTree->MakeClass("recoPreStart")

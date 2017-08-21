@@ -1,0 +1,35 @@
+<use   name="FWCore/Framework"/>
+<use   name="FWCore/PluginManager"/>
+<use   name="FWCore/ParameterSet"/>
+<use   name="FWCore/Common"/>
+<use   name="DataFormats/MuonReco"/>
+<use   name="root"/>
+<use   name="roostats"/>
+<use   name="boost"/>
+<use   name="rootcintex"/>
+<use   name="CommonTools/Utils"/>
+<use   name="PhysicsTools/Utilities"/>
+<use   name="JetMETCorrections/Objects"/>
+<use   name="CondFormats/JetMETObjects"/>
+<use   name="CondFormats/PhysicsToolsObjects"/>
+<use   name="lhapdf"/>
+<use   name="PhysicsTools/PatUtils"/>
+<use   name="DataFormats/VertexReco" />
+<use   name="FWCore/ServiceRegistry"/>
+<use   name="CommonTools/UtilAlgos"/>
+<use   name="AnalysisDataFormats/TopObjects"/>
+<use   name="DataFormats/HepMCCandidate"/>
+<use   name="Fireworks/Candidates"/>
+<use   name="Fireworks/Core"/>
+<use   name="rootcore"/>
+<use   name="DataFormats/Math"/>
+<use   name="DataFormats/Common"/>
+<use   name="DataFormats/JetReco"/>
+<use   name="DataFormats/PatCandidates"/>
+<use   name="FWCore/Utilities"/>
+<use   name="PhysicsTools/UtilAlgos"/>
+<use   name="clhep"/>
+<Flags CXXFLAGS="-g">
+<export>
+  <lib   name="1"/>
+</export>
